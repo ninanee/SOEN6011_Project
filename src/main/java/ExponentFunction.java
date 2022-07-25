@@ -19,28 +19,6 @@ public class ExponentFunction {
     public static final double LN2 = 0.6931471805599453;
 
     /**
-     * Calculate the value of a*(b^x).
-     *
-     * @param a double
-     * @param b base number,double
-     * @param x exponent number,double
-     * @return ab^x double
-     * @throws Exception the exception
-     */
-    public static double calculate(double a, double b, double x) throws Exception {
-        if (a == 0) return 0;
-        return a * power(b, x);
-    }
-
-    /**
-     * Ex.
-     *
-     * @param x the x
-     * @param n the n
-     * @return the double
-     */
-
-    /**
      * Calculate the value of e^x.
      *
      * @param x exponent number,double
@@ -93,7 +71,7 @@ public class ExponentFunction {
     }
 
     /**
-     * The power function: b^x.
+     * The power function for integer x: b^x.
      *
      * @param b the base number,double
      * @param x the exponent number,integer
@@ -123,11 +101,11 @@ public class ExponentFunction {
     }
 
     /**
-     * Calculate the value of a^x.According to a^x=e^(x*ln(a))
+     * Calculate the value for decimal x b^x. According to b^x=e^(x*ln(a))
      *
      * @param b base number,double
      * @param x exponent number,double
-     * @return a^x double
+     * @return b^x double
      * @throws Exception the exception
      */
     public static double power(double b, double x) throws Exception {
@@ -152,4 +130,22 @@ public class ExponentFunction {
         if (x < 0) x = -x;
         return x;
     }
+
+
+    /**
+     * Calculate the value of ab^x.
+     *
+     * @param a double
+     * @param b base number,double
+     * @param x exponent number,double
+     * @return ab^x double
+     * @throws Exception the exception
+     */
+    public static double calculate(double a, double b, double x) throws Exception {
+        if (a == 0) return 0;
+        return a * power(b, x);
+    }
+
 }
+
+
