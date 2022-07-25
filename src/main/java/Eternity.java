@@ -28,7 +28,7 @@ public class Eternity {
         double x = read();
         System.out.println("--------------------------------");
         try {
-            System.out.println("Result :" + ExponentFunction.calculate(a, b, x));
+            System.out.println("The results of ab^x is :" + ExponentFunction.calculate(a, b, x));
             System.out.println("--------------------------------");
         } catch (Exception e) {
             //throw new RuntimeException(e);
