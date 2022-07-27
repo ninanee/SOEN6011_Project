@@ -2,7 +2,9 @@
  * Author: Yun Ni
  * Student ID: 40179775
  */
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DoublePowerTest {
@@ -15,7 +17,7 @@ class DoublePowerTest {
     @Test
     public void zeroPowerRationalNumber() throws Exception {
 
-        assertEquals(0.0,ExponentFunction.power(0.0, 5.8));
+        assertEquals(0.0, ExponentFunction.power(0.0, 5.8));
     }
 
     @Test
@@ -46,7 +48,7 @@ class DoublePowerTest {
             ExponentFunction.power(-5.5, -9.6);
         });
 
-        assertTrue(exception.getMessage().contains("The range of the math has errors"));
+        assertTrue(exception.getMessage().contains("The variable b has error."));
 
     }
 
@@ -57,6 +59,6 @@ class DoublePowerTest {
             ExponentFunction.power(-30.7, 41.3);
         });
 
-        assertTrue(exception.getMessage().contains("The range of the math has errors"));
+        assertTrue(exception.getMessage().contains("The variable b has error."));
     }
 }

@@ -2,6 +2,7 @@
  * Author: Yun Ni
  * Student ID: 40179775
  */
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -21,9 +22,9 @@ class LnTest {
     @Test
     void lnOfPositiveValues() throws Exception {
 
-        assertEquals(0,ExponentFunction.ln(1));
-        assertEquals(3.9702919135520522,ExponentFunction.ln(53));
-        assertEquals(4.9126548857360515,ExponentFunction.ln(136));
+        assertEquals(0, ExponentFunction.ln(1));
+        assertEquals(3.9702919135520522, ExponentFunction.ln(53));
+        assertEquals(4.9126548857360515, ExponentFunction.ln(136));
     }
 
     @Test

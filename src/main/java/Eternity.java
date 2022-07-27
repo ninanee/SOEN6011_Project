@@ -18,10 +18,10 @@ public class Eternity {
         System.out.println("--------------------------------");
         System.out.println("Calculator for calculating the function ab^x, please enter numbers");
         System.out.println("--------------------------------");
-        System.out.println("Enter the value a:");
+        System.out.println("Enter the value a (a != 0):");
         double a = read();
         System.out.println("--------------------------------");
-        System.out.println("Enter the value b:");
+        System.out.println("Enter the value b (b > 0):");
         double b = read();
         System.out.println("--------------------------------");
         System.out.println("Enter the Power x:");
@@ -31,8 +31,8 @@ public class Eternity {
             System.out.println("The results of ab^x is :" + ExponentFunction.calculate(a, b, x));
             System.out.println("--------------------------------");
         } catch (Exception e) {
-            //throw new RuntimeException(e);
-            System.out.println("Something went wrong!");
+//            throw new RuntimeException(e);
+            System.out.println("Something went wrong with the inputs.");
         }
     }
 
