@@ -66,8 +66,7 @@ Instructor: PANKAJ KAMTHAN \\
 The function $f(x) = ab^x$ is an exponential function where $a\neq0$ and $b>0$. In this exponential function, $a$ is the initial quality, $b$ is the growth factor or decay factor and $c$ is the exponent. The function is called exponential because it has the input variable in the exponent and we can repeatedly multiplying by $b$~\cite{browder2012mathematical}.
 
 \subsection{Domain}
-The domain of this function is given by all the values that $x$ can take. If $b$ is a positive real number other than 1 and $a> 0$, $x$ can take any value.\\
-Therefore, the domain is \textbf{$x\in R$}.
+The domain of this function is given by all the values that $x$ can take. If $b$ is a positive real number and $a \neq 0$, $x$ can take any value. Therefore, the domain is \textbf{$x\in R$}.
 
 \subsection{Co-domain}
 The co-domain is given by the dependent values of the variable $y$, where $y = ab^x$. If we evaluate $f(-\infty)$ then $y$ tends to zero. Besides, if we evaluate $f(\infty)$ then $y$ tends to infinity\cite{Anu:2013}.
@@ -88,16 +87,16 @@ Therefore, the co-domain is $(0, \infty)$.
 \end{figure}
 
 \subsection{Context of Use Model}
-The context of use model for the exponential function calculator\cite{zelen1966application}\cite{lebanon2001boosting} is represented by the UML Class Diagram as Figure \ref{fig:context}.
+The context of use model for the exponential function calculator\cite{zelen1966application}\cite{lebanon2001boosting} is represented as Figure \ref{fig:context}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=10cm]{images/Context_diagram.png}
+    \includegraphics[width=14cm]{images/Context_diagram.png}
     \caption{The Context Diagram for exponential function calculator}
     \label{fig:context}
 \end{figure}
 
 \begin{enumerate}
-\item User: Users who use the calculator to get the output of $ab^x$ with the input x.
+\item End User: Users who use the calculator to get the output of $ab^x$ with the input x.
 \item Task: Calculate the output of $ab^x$ with the input $x$ and show the result to the user.
 \item
 Environment:
@@ -209,9 +208,23 @@ This section presents the assumptions and requirements\cite{iso2018ieee} for imp
 \end{tabular}
 \end{center}
 
+\begin{center}
+    \begin{tabular}{|p{3cm}|p{11cm}| }
+    \hline
+    \textbf{Identification} &  NFR2 \\ \hline 
+    \textbf{Type} & Non-Functional Requirement\\ \hline
+    \textbf{Version No.} &  1.0 \\ \hline 
+    \textbf{Owner} &  Yun Ni \\ \hline 
+    \textbf{Priority} & High  \\ \hline
+    \textbf{Difficulty} & Easy  \\ \hline
+    \textbf{Description} & The program should be modular and can be tested.\\ \hline
+\end{tabular}
+\end{center}
+
 \section{Algorithm}\label{problem3}
 This section presents the pseudo-code and algorithm for implementing $f(x)=ab^x$.
 \subsection{Mind map}
+The mind map for deciding a pseudocode format and algorithm design can be checked with Figure\ref{fig:mind} and Figure\ref{fig:pseudocode}
 
 \begin{figure}[h]
     \centering
@@ -220,13 +233,20 @@ This section presents the pseudo-code and algorithm for implementing $f(x)=ab^x$
     \label{fig:mind}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=13cm]{images/pseudocodeDesgin.png}
+    \caption{The mind map of pseudocode format}
+    \label{fig:pseudocode}
+\end{figure}
+
 \subsection{Algorithm 1: Iterative}
 The interactive algorithm can execute the steps in number of iterations, using the loop. We can track the result in a variable called prod, which is initially set to 1 and then use loop from 1 to x number of times. By incriminating by one on each iteration, we multiply prod by b. At the end of the loop value of prod is equal to $b^x$ then return the result of $a * prod$\cite{xu2015application}.
 
 \begin{algorithm}
   \caption{Iterative algorithm for calculating $f(x) = ab^x$}
   \begin{algorithmic}[1]
-  \Require $a \neq 0$ and $b > 0$ and $b \neq 1$ 
+  \Require $a \neq 0$ and $b > 0$
     \Function\textbf{\textbf{exponent\_iterative(a,b,x)}}\\
     \textbf{in: }double number x, a, b\\
     \textbf{out: }double number prod
@@ -258,7 +278,7 @@ A recursive function calls by itself during the execution of the program, until 
 \begin{algorithm}
   \caption{Recursive algorithm for calculating $f(x) = ab^x$}
   \begin{algorithmic}[1]
-  \Require $a \neq 0$ and $b > 0$ and $b \neq 1$ 
+  \Require $a \neq 0$ and $b > 0$ 
    \Function\textbf{\textbf{exponent\_recursive(a,b,x)}}\\
     \textbf{in: }double number x, a, b\\
     \textbf{out: }double number prod
@@ -312,7 +332,7 @@ For calculating the exponential function $f(x) = ab^x$ more properly, we can use
 \begin{algorithm}
 \caption{Exponentiation by Taylor Series\cite{Anu:Stack_Overflow}}\label{exp1}
 \begin{algorithmic}[1]
-\Require $a \neq 0$ and $b > 0$ and $b \neq 1$ 
+\Require $a \neq 0$ and $b > 0$ 
 \Function{logarithm}{$n$}
 \State $sum\gets 0$
 \While{$n > 1$}
@@ -343,7 +363,7 @@ For calculating the exponential function $f(x) = ab^x$ more properly, we can use
         The Taylor Series is very useful for derivations and can calculate even the most complex functions. & The algorithm could be very complex with deriving.\\\hline The Taylor Series can be used to get theoretical error bounds and estimate the value of any input\cite{hariharan2010comparative}.  & The expansion point might lead truncation errors.\\\hline
     \end{tabular}
 \end{center}
-\subsection{Conclusion}
+\subsection{Algorithm Choice}
 For a function, the accuracy is the most significant factor, since a wrong output is worse than a blank. The iterative and recursion algorithms can not calculate the decimal part of $f(x) = ab^x$ with high precision, therefore, my decision is to use Taylor Series algorithm and the sub-function of the recursive algorithm to implement the project. It  runs more efficiently and provide results with high accuracy.
 
 \section{Code Implementation}
@@ -391,14 +411,14 @@ The quality attributes assessed while implementing the source code and program a
 \subsection{Checkstyle}
 CheckStyle for java can scan the source code and point out coding issues that the code might have missed or might lead to problems.
 It can also help improve the Java Coding because we have to investigate and decide if this is a problem or not. I am using Google Checkstyle in the program like in Figure\ref{fig:Checkstyle} and Figure\ref{fig:Checkstyle2}.
-\begin{figure}[p]
+\begin{figure}[h]
     \centering
     \includegraphics[width=15cm]{images/checkstyle.png}
     \caption{The snapshots of the Checkstyle}
     \label{fig:Checkstyle}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[h]
     \centering
     \includegraphics[width=15cm]{images/check2.png}
     \caption{The snapshots of the Checkstyle}
